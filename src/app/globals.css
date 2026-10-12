@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #183F30;
+  --color-forest-dark: #0f271e;
+  --color-forest-light: #235441;
+  --color-charcoal: #171B19;
+  --color-charcoal-dark: #0f1211;
+  --color-ivory: #F5F3EC;
+  --color-ivory-light: #FAF9F5;
+  --color-gold: #B69A60;
+  --color-gold-light: #C9B078;
+  --color-gold-dark: #9A804B;
+  --color-sage: #DCE5DB;
+  --color-sage-light: #EDF3EC;
+  --color-sage-dark: #B6C7B4;
+  --color-stone-muted: #8E9490;
+}
+
+:root {
+  --background: #171B19;
+  --foreground: #F5F3EC;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #171B19;
+  color: #F5F3EC;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #B69A60;
+  color: #171B19;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #171B19;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B3831;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B69A60;
+}
+
+/* Glassmorphism accents */
+.glass-panel {
+  background: rgba(23, 27, 25, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(182, 154, 96, 0.15);
+}
+
+.glass-panel-light {
+  background: rgba(245, 243, 236, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(24, 63, 48, 0.12);
+}
+
+.card-hover-glow {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover-glow:hover {
+  border-color: rgba(182, 154, 96, 0.4);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.5), 0 0 24px -4px rgba(182, 154, 96, 0.08);
+}
